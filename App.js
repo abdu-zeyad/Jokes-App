@@ -1,6 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './screens/Home';
@@ -8,8 +6,9 @@ import Profile from './screens/Profile'
 import Settings from './screens/Settings'
 
 import { NavigationContainer } from '@react-navigation/native';
-import Items from './screens/Items';
-import Item from './screens/Item';
+
+import Category from './screens/Category';
+import SingleJoke from './screens/SingleJoke';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -25,14 +24,6 @@ function Root() {
   );
 }
 
-function Content({ route, navigation }) {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Items" component={Items} />
-      <Stack.Screen name="Item" component={Item} />
-    </Stack.Navigator>
-  );
-}
 export default function App() {
   return (
     <NavigationContainer>
@@ -42,7 +33,9 @@ export default function App() {
           component={Root}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Content" component={Content} options={{ headerShown: false }} />
+        <Stack.Screen name="Category" component={Category} />
+        <Stack.Screen name="SingleJoke" component={SingleJoke} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
