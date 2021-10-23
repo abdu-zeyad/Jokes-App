@@ -43,7 +43,7 @@ export default function App() {
           component={Root}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Items" component={Content} options={{ headerShown: false }} />
+        <Stack.Screen name="Content" component={Content} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
