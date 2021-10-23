@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity } from 'react-native'
-
+import Data from '../data/Jokes.json'
 export default function Home({ navigation }) {
-    const [reviews, setReviews] = useState([
-        { title: 'Zelda, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
-        { title: 'Gotta Catch Them All (again)', rating: 4, body: 'lorem ipsum', key: '2' },
-        { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
-    ]);
+    const [reviews, setReviews] = useState(Data);
     return (
         <View>
             <FlatList data={reviews} renderItem={({ item }) => (
