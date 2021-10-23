@@ -1,10 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-export default function Item() {
+export default function Item({ route, navigation }) {
     return (
         <View>
-            <Text>this is a simple joke</Text>
+            <Text>{route.params.title}</Text>
+            <Text>{route.params.rating}</Text>
+            <Text>{route.params.body}</Text>
         </View>
     )
 }

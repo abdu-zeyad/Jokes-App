@@ -25,12 +25,11 @@ function Root() {
   );
 }
 
-function Content() {
+function Content({ route, navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Item" component={Item} />
       <Stack.Screen name="Items" component={Items} />
-
+      <Stack.Screen name="Item" component={Item} />
     </Stack.Navigator>
   );
 }
