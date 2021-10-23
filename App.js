@@ -1,14 +1,12 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import Category from './screens/Category';
+import SingleJoke from './screens/SingleJoke';
 import Home from './screens/Home';
 import Profile from './screens/Profile'
 import Settings from './screens/Settings'
-
-import { NavigationContainer } from '@react-navigation/native';
-
-import Category from './screens/Category';
-import SingleJoke from './screens/SingleJoke';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
