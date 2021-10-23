@@ -9,6 +9,7 @@ import Settings from './screens/Settings'
 
 import { NavigationContainer } from '@react-navigation/native';
 import Items from './screens/Items';
+import Item from './screens/Item';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -24,6 +25,15 @@ function Root() {
   );
 }
 
+function Content() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Item" component={Item} />
+      <Stack.Screen name="Items" component={Items} />
+
+    </Stack.Navigator>
+  );
+}
 export default function App() {
   return (
     <NavigationContainer>
@@ -33,7 +43,7 @@ export default function App() {
           component={Root}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Items" component={Items} />
+        <Stack.Screen name="Items" component={Content} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
