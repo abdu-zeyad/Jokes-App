@@ -2,6 +2,8 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
+import AppLoading from 'expo-app-loading';
+import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
 import Category from './screens/Category';
 import SingleJoke from './screens/SingleJoke';
 import Home from './screens/Home';
@@ -23,19 +25,27 @@ function Root() {
 }
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Root"
-          component={Root}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen name="Category" component={Category} />
-        <Stack.Screen name="SingleJoke" component={SingleJoke} />
+  let [fontsLoaded] = useFonts({
+    Inter_900Black,
+  });
 
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Root"
+            component={Root}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="Category" component={Category} />
+          <Stack.Screen name="SingleJoke" component={SingleJoke} />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
