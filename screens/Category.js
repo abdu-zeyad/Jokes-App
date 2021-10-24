@@ -1,15 +1,19 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+import Card from '../components/Card'
 
 export default function Category({ route, navigation }) {
     return (
         <View>
-            <Text>{route.params.title}</Text>
-            <Text>{route.params.rating}</Text>
-            <Text>{route.params.body}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate('SingleJoke')}>
-                <Text >go to single joke page</Text>
-            </TouchableOpacity>
+            <Card>
+                <Text>{route.params.title}</Text>
+                <Text>{route.params.rating}</Text>
+                <Text>{route.params.body}</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('SingleJoke')}>
+                    <Text >go to single joke page</Text>
+                </TouchableOpacity>
+            </Card>
+
         </View>
     )
 }

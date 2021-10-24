@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, FlatList, TouchableOpacity } from 'react-native'
+import Card from '../components/Card';
+
 import Data from '../data/Jokes.json'
 export default function Home({ navigation }) {
     const [reviews, setReviews] = useState(Data);
@@ -7,7 +9,9 @@ export default function Home({ navigation }) {
         <View>
             <FlatList data={reviews} renderItem={({ item }) => (
                 <TouchableOpacity onPress={() => navigation.navigate('Category', item)}>
-                    <Text >{item.title}</Text>
+                    <Card>
+                        <Text >{item.title}</Text>
+                    </Card>
                 </TouchableOpacity>
             )} />
         </View>
