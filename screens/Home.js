@@ -7,7 +7,7 @@ export default function Home({ navigation }) {
     return (
         <View style={styles.container}>
             <FlatList
-                contentContainerStyle={{ justifyContent: 'flex-start', flexDirection: 'row', flexWrap: 'wrap', }}
+                contentContainerStyle={{ justifyContent: 'space-around', flexDirection: 'row', flexWrap: 'wrap', }}
                 data={reviews}
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => navigation.navigate('Category', item)}>
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     container: {
         backgroundColor: '#FFAE76',
-        flex: 1
+        flex: 1,
     },
     textStyle: {
         fontSize: 30,
